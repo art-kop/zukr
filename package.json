@@ -1,0 +1,31 @@
+{
+  "name": "zukr",
+  "version": "1.0.0",
+  "description": "Site of the subsidiary company \"Tsukroavtomat - INZh\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/art-kop/zukr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/art-kop/zukr/issues"
+  },
+  "homepage": "https://github.com/art-kop/zukr#readme"
+}
