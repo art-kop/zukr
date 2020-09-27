@@ -5,12 +5,3 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
-
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: black; }
-  .box__item {
-    width: 10px;
-    height: 10px;
-    background-color: red; }
