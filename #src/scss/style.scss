@@ -6,4 +6,26 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+.page-body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.visually-hidden{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+@import 'header', 'main', 'footer', 'components/navigation', 'components/card';
+
+
 

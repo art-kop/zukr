@@ -1,0 +1,30 @@
+.footer{
+    flex: 1 0 5em;
+    background-color: #17141D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    &__navigation {
+        padding-bottom: 0.4em;
+        .navigation__list{}
+        .navigation__item{
+            &::after{
+                content: '|';
+                margin: 1em;
+            }
+            &:last-child::after{
+                content: '';
+            }
+        }
+        .navigation__link{
+            color: #fff;
+        }
+    }
+    .copyright{
+        font-size: 0.8em;
+        color: wheat;
+    }
+}

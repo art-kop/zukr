@@ -1,0 +1,54 @@
+.header {
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #17141D;
+
+    padding: 0 3em;
+
+    &__logo {
+        position: relative;
+    }
+
+    &__navigation {
+        position: relative;
+        .navigation__list{}
+        
+        .navigation__item{
+            padding: 1em;
+        }
+
+        .navigation__link{
+            transition: .3s;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            &:hover {
+                color: orange;
+            }
+        }
+    }
+}
+
+.logo {
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    &__img {
+        margin-right: .5em;
+        width: 2em;
+    }
+
+    &__tetx {
+        font-size: 1.4em;
+        font-weight: bold;
+        display: inline-block;
+    }
+}
+
