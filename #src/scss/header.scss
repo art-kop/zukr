@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    height: auto;
+    height: 3.2em;
     z-index: 10;
     position: fixed;
     display: flex;
@@ -12,6 +12,18 @@
 
     &__logo {
         position: relative;
+    }
+
+    &__wrap{
+        display: flex;
+        align-items: center;
+    }
+
+    &__email{
+        margin-left: 1.2em;
+        color: orange;
+        text-decoration: none;
+        font-size: 1em;
     }
 
     &__navigation {
@@ -45,10 +57,25 @@
         width: 2em;
     }
 
-    &__tetx {
+    &__text {
+        white-space: nowrap;
         font-size: 1.4em;
         font-weight: bold;
         display: inline-block;
     }
 }
 
+
+@media only screen and (max-width: 1050px) {
+    .header{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 820px) {
+    .header{
+        justify-content: center;
+    }
+    .header__wrap{
+        display: none;
+    }
+}

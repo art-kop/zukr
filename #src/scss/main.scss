@@ -11,11 +11,11 @@
     padding: 1.2em;
 
     &__title{
+        text-align: center;
         color:#17141D;
         font-size: 2em;
         display: flex;
         align-items: center;
-        justify-content: center;
 
         &::after, &::before{
             content: '';
@@ -23,7 +23,6 @@
             flex: 1 1 auto;
             height: .1em;
             background-color: #17141D;
-            white-space: nowrap;
         }
     }
 }
@@ -115,12 +114,15 @@
     &__content {
         display: block;
         margin: auto;
-        text-align: center;
-        width: 60%;
-        padding: 1em 0;
+        width: 70%;
+        padding: 1em 2em;
+        text-align: justify;
+
     }
 
-    &__p{}
+    &__p:first-child{
+        text-align: center;
+    }
 }
 
 .works {
@@ -137,7 +139,7 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin-bottom: 1em;
+        margin: 1em 0em;
     }
 
     &__year {
@@ -169,21 +171,43 @@
     }
 
     &__list {
-        list-style: square;
         font-size: 1em;
+        margin-left: 1em;
     }
 
     &__item {
+
     }
 
     &__link {
         font-size: 1.2em;
         color: #17141D;
-        text-decoration: none;
-
         &:hover{
             color: orange;
             text-decoration: underline;
         }
     }
 }
+
+
+@media only screen and (max-width: 1320px) {
+    .works__header{
+        margin: 1em 10em;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .info__content{
+        width: 100%;
+    }
+    .works__header{
+        margin: 1em 0em;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .section__title{
+        &::after, &::before{
+            visibility: hidden;
+        }
+    }
+}
+
