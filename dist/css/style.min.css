@@ -375,20 +375,6 @@ html {
   .footer__navigation {
     width: 100%;
     padding-bottom: 0.4em; }
-    .footer__navigation .navigation__list {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center; }
     .footer__navigation .navigation__item {
       padding: 0 1em; }
     .footer__navigation .navigation__link {
@@ -419,9 +405,9 @@ html {
 
 .navigation__item {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 1 10em;
-      -ms-flex: 0 1 10em;
-          flex: 0 1 10em; }
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto; }
 
 .navigation__link {
   color: #000; }
