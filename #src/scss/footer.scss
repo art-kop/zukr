@@ -1,23 +1,31 @@
 .footer{
     flex: 1 0 5em;
     background-color: #17141D;
+    color: #fff;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
 
     &__navigation {
+        width: 100%;
         padding-bottom: 0.4em;
-        .navigation__list{}
+        .navigation__list{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .navigation__item{
-            &::after{
-                content: '|';
-                margin: 1em;
-            }
-            &:last-child::after{
-                content: '';
-            }
+            padding: 0 1em;
+
+            // &::after{
+            //     content: '|';
+            //     margin: 1em;
+            // }
+            // &:last-child::after{
+            //     content: '';
+            // }
         }
         .navigation__link{
             color: #fff;

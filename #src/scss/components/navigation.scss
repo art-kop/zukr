@@ -1,11 +1,15 @@
 .navigation {
 
     &__list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
         list-style: none;
     }
 
     &__item {
-        display: inline-block;
+        flex: 0 1 10em;
     }
 
     &__link {

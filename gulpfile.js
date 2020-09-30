@@ -105,4 +105,4 @@ exports.images = images;
 exports.cleanimg = cleanimg;
 exports.html = html;
 
-exports.default = parallel(scripts, styles, html, browsersync, startwatch);
+exports.default = parallel(scripts, styles, images, html, browsersync, startwatch);
