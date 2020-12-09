@@ -14,7 +14,7 @@ gulp.task('styles:compress', () => {
             require('postcss-import'),
             require('postcss-csso')
         ]))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('styles:inline', () => {
@@ -24,7 +24,9 @@ gulp.task('styles:inline', () => {
                 const style = fs.readFileSync('dist/styles.css', 'utf8');
                 return '<style>' + style + '</style>';
             }
-        ))
+        )).pipe(del([
+            'dist/styles/*',
+        ]))
         .pipe(gulp.dest('dist'));
 });
 
@@ -36,7 +38,7 @@ gulp.task('scripts:compress', () => {
             presets: ['@babel/preset-env']
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/scripts/scripts.js'));
 });
 
 gulp.task('scripts:inline', () => {
