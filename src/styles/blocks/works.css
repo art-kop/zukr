@@ -1,0 +1,145 @@
+.works {
+    display: flex;
+    text-align: center;
+}
+
+.works-content{
+    width: 360px;
+}
+
+.works section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+    position: relative;
+    width: 100%;
+}
+
+.works__inner{
+    max-width: 60em;
+}
+
+.section__wrap .works section>div{
+    margin: 0;
+    padding: 1em;
+}
+
+.works section .section__title{
+    width: 100%;
+}
+
+
+.works section>div {
+    /* border-radius: .5em;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, 0.26); */
+    margin: 2%;
+    padding: 1em 0;
+    transition: .3s;
+}
+
+.works section h3 {
+    font-size: 2em;
+    width: 100%;
+    font-weight: 300;
+    position: sticky;
+    top: 1.6em;
+    background-color: #262130;
+    color: #fff;
+}
+.works section h3 a{
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: #fff;
+}
+.works section div h4 {
+    padding-bottom: 1em;
+}
+
+.works section div h4 a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #000;
+}
+
+.works section div h4 a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.works__images {
+    display: flex;
+    justify-content: center;
+}
+
+
+.works__images p img {
+    max-width: 250px;
+}
+
+.works__images p {
+    padding: 0 2em;
+}
+
+.works-menu {
+    width: 15em;
+    height: 93vh;
+    margin: 0;
+    position: sticky;
+    top: 3.4em;
+    background-color: #262130;
+    color: #fff;
+    overflow-y: scroll;
+}
+
+.works-menu h2 {
+    font-size: 2em;
+    font-weight: 300;
+    position: sticky;
+    top: 0;
+    background-color: #262130;
+}
+
+.works-content {
+    flex: 1 0;
+}
+
+.works-menu__links {
+    font-size: .8em;
+    padding: 0 2em 1em;
+}
+
+.works-menu__links h3 {
+    font-size: 1.3em;
+    padding: .5em 0;
+}
+
+.works-menu__links a {
+    text-align: left;
+    display: block;
+    color: rgba(255, 255, 255, 0.616);
+    padding-bottom: .5em;
+    text-decoration: none;
+}
+
+.works-menu__links a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 640px) {
+    .works-menu {
+        display: none;
+    }
+
+    .works__images p {
+        width: min-content;
+        padding: 0;
+    }
+    .works section>div {
+        margin: 2%;
+    }
+
+
+}

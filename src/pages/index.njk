@@ -1,0 +1,56 @@
+---
+title: ДП Цукравтомат Инж
+layout: page.njk
+permalink: index.html
+---
+<main class="main main--no-header">
+    <div class="main__header fix-pos-0-ie">
+        <img src="img/svekla.jpg" alt="" class="main__img">
+        <div class="main__fog"></div>
+        <div class="main-logo">
+            <img src="img/logo.svg" alt="логотип ДП Цукравтомат Инж" class="main-logo__img">
+            <div class="main-logo__text">ДП Цукравтомат ИНЖ</div>
+            <div class="promo">
+                <h2 class="promo__title">Добро пожаловать!</h2>
+                <p class="promo__text">
+                Основной сферой деятельности нашего предприятия является автоматизация технологических, теплотехнических и химических процессов в сахарной промышленности и смежных отраслях пищевой промышленности.
+                Вот уже 19 лет мы успешно оказываем наши услуги на заводах Украины, России, Республики Беларусь, Казахстана и других стран ближнего зарубежья.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section__wrap">
+        <section class="section">
+            <h2 class="section__title">Услуги</h2>
+            {% include "features-cards.njk" %}
+        </section>
+        <div class="works">
+        <section class="section">
+            <h2 class="section__title">Последние работы</h2>
+                {%- for work in collections.y2016 -%}
+                    <div class="works__inner">
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+        </section>
+        </div>
+        <section class="section">
+            <h2 class="section__title">Мы на карте</h2>
+            <div class="contacts-section">
+                <div class="contacts__info">
+                    <span itemprop="name"><b>ДП "Цукроавтомат - ИНЖ"</b></span>
+                    <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="addressCountry">Украина, 04073</span>
+                        <span itemprop="addressRegion">г. Киев</span>,
+                        <span itemprop="streetAddress">ул. Сырецкая 5</span>,
+                        <span itemprop="addressLocality">корпус 2</span>
+                    </address>
+                </div>
+                {% include "map.njk" %}
+            </div>
+        </section>
+    </div>
+</main>
+<script src="/scripts/main-page.js"></script>

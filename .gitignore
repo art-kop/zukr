@@ -1,7 +1,1 @@
-# Build and Release Folders
-node_modules/
-
-# Other files and folders
-.settings/
-
-# Executables
+node_modules

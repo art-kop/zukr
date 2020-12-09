@@ -1,108 +1,70 @@
-const projectFolder = "dist";
-const sourceFolder = "#src";
-const path = {
-    build:{
-        html: projectFolder + '/',
-        css: projectFolder + '/css/',
-        js: projectFolder + '/js/',
-        img: projectFolder + '/img/',
-        fonts: projectFolder + '/fonts/'
-    },
-    src:{
-        html: sourceFolder + '/index.html',
-        sass: sourceFolder + '/sass/style.sass',
-        scss: sourceFolder + '/scss/style.scss',
-        js: sourceFolder + '/js/script.js',
-        img: sourceFolder + '/img/**/*',
-        fonts: sourceFolder + '/fonts/*.ttf'
-    },
-    watch:{
-        html: sourceFolder + '/**/*.html',
-        sass: sourceFolder + '/sass/**/*.sass',
-        scss: sourceFolder + '/scss/**/*.scss',
-        js: sourceFolder + '/js/**/*.js',
-        img: sourceFolder + '/img/**/*',
-    },
-    clean: './' + projectFolder + '/'
-};
-
-const {src, dest, parallel, series, watch} = require('gulp');
-const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify-es').default;
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const cleancss = require('gulp-clean-css');
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
+const babel = require('gulp-babel');
 const del = require('del');
+const fs = require('fs');
+const gulp = require('gulp');
+const postcss = require('gulp-postcss');
+const replace = require('gulp-replace');
+const uglify = require('gulp-uglify');
 
-const preprocessor = {
-    name: sass,
-    path: path.src.sass,
-    watch: path.watch.sass
-};
+// Styles
 
-function browsersync(p){
-    browserSync.init({
-        server:{
-            baseDir: './' + projectFolder + '/'
-        },
-        port: 3000,
-        notify: false,
-        online: true
-    })
-};
+gulp.task('styles:compress', () => {
+    return gulp.src('src/styles/styles.css')
+        .pipe(postcss([
+            require('postcss-import'),
+            require('postcss-csso')
+        ]))
+        .pipe(gulp.dest('dist'));
+});
 
-function scripts(){
-    return src(path.src.js)
-        .pipe(concat('script.min.js'))
+gulp.task('styles:inline', () => {
+    return gulp.src('dist/**/*.html')
+        .pipe(replace(
+            /<link rel="stylesheet" href="\/styles\/styles.css">/, () => {
+                const style = fs.readFileSync('dist/styles.css', 'utf8');
+                return '<style>' + style + '</style>';
+            }
+        ))
+        .pipe(gulp.dest('dist'));
+});
+
+// Scripts
+
+gulp.task('scripts:compress', () => {
+    return gulp.src('src/scripts/*.js')
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
         .pipe(uglify())
-        .pipe(dest(path.build.js))
-        .pipe(browserSync.stream())
-}
+        .pipe(gulp.dest('dist'));
+});
 
-function styles(){
-    return src(path.src.scss)
-        .pipe(sass())
-        .pipe(concat('style.min.css'))
-        .pipe(autoprefixer({overrideBrowserslist: ['last 50 versions'], grid: true}))
-        // .pipe(cleancss(( { level: { 1: {specialComments: 0} }, format: 'beautify' } )))
-        .pipe(dest(path.build.css))
-        .pipe(browserSync.stream())
-};
+gulp.task('scripts:inline', () => {
+    return gulp.src('dist/**/*.html')
+        .pipe(replace(
+            /<script src="\/scripts\/scripts.js"><\/script>/, () => {
+                const style = fs.readFileSync('dist/scripts.js', 'utf8');
+                return '<script>' + style + '</script>';
+            }
+        ))
+        .pipe(gulp.dest('dist'));
+});
 
-function images(){
-    return src(path.src.img)
-        .pipe(newer(path.build.img))
-        .pipe(imagemin())
-        .pipe(dest(path.build.img))
-}
+gulp.task('clean', () => {
+    return del([
+        'dist/styles',
+        'dist/styles.css',
+        'dist/scripts',
+        'dist/scripts.js'
+    ]);
+});
 
-function cleanimg(){
-    return del( path.build.img,{force: true});
-}
+// Build
 
-const html = () => {
-    return src(path.src.html)
-    .pipe(dest(path.build.html))
-    // .pipe(browserSync.reload())
-}
-
-function startwatch(){
-    watch(path.watch.scss, styles);
-    watch(path.watch.js, scripts);
-    watch(path.watch.html, html);
-    watch(path.watch.html).on('change', browserSync.reload);
-    watch(path.watch.img, images);
-};
-
-
-exports.browsersync = browsersync;
-exports.scripts = scripts;
-exports.styles = styles;
-exports.images = images;
-exports.cleanimg = cleanimg;
-exports.html = html;
-
-exports.default = parallel(scripts, styles, images, html, browsersync, startwatch);
+gulp.task('build', gulp.series(
+    'styles:compress',
+    'styles:inline',
+    'scripts:compress',
+    'scripts:inline',
+    'clean'
+));

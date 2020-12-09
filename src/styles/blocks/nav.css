@@ -1,0 +1,25 @@
+.nav__menu{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav__item{
+    flex: 0 1 auto;
+    padding: .5em;
+}
+
+.nav__link{
+    transition: .3s;
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.nav__link:hover{
+    color: var(--accent-color);
+}
+

@@ -1,0 +1,16 @@
+<ul class="card-list">
+    {%- for feature in collections.features -%}
+    <li class="card card-list__item ">
+        <div class="card__wrap">
+             {{feature.templateContent | getFirstImage("class","card__img") | safe }}
+            {# <img alt="Системы автоматизации" class="card__img" src="../img/features/sa.jpg"> #}
+            <div class="card__fog fix-pos-0-ie"></div>
+            <h3 class="card__title fix-pos-0-ie">
+                <a href="{{feature.url}}" class="card__link">{{feature.templateContent | h1}}</a>
+            </h3>
+        </div>
+        <p class="card__text">{{feature.data.previewText}}</p>
+    </li>
+    {%- endfor -%}
+</ul>
+

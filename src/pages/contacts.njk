@@ -1,0 +1,50 @@
+---
+title: Контакты
+layout: page.njk
+permalink: contacts/index.html
+tags: pages
+---
+
+<main class="main">
+    <h2 class="section__title">Контакты</h2>
+    <div class="page-container">
+        <ul class="page-container__info contancts-list">
+            <li class="contacts-list__item" itemscope itemtype="http://schema.org/LocalBusiness">
+                <b>
+                    <span itemprop="name">ДП "Цукроавтомат - ИНЖ"</span></b><br>
+                Украина, 04073 <br>
+                <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressRegion">г. Киев</span>,
+                    <span itemprop="streetAddress">ул. Сырецкая 5</span>,
+                    <span itemprop="addressLocality">корпус 2</span>
+                </address>
+                Тел./факс: <a href="tel:+380444639846" itemprop="telephone">+38 (044) 463-98-46</a>
+                <br>
+                E-mail: <a href="mailto:sahavtomat.kiev.ua@gmail.com" itemprop="email">sahavtomat.kiev.ua@gmail.com</a>
+                <br>
+            </li>
+            <li class="contacts-list__item">
+                <p>Представительство в Российской Федерации :</p>
+                <b>ООО "БЕЛ - САХАВТОМАТ ИНЖ."</b>
+                <br>
+                Россия, 308000 <br>
+                <address>г. Белгород, ул. Н. Островского, 1, оф. 2</address>
+                Тел./факс: <a href="tel:+74722353687">+7 (4722) 35-36-87</a>
+                <br>
+            </li>
+            <li class="contacts-list__item">
+                <p>Наши партнеры:</p>
+                <b> ООО "САХАВТОМАТ"</b>
+                <br>
+                Украина, 61001 <br>
+                <address>г. Харьков, ул. Кирова 9, кв. 90 </address>
+                Тел.: <a href="tel:380506808315">+38 (050) 680-83-15</a>
+                <br>
+                WWW: <a href="https://sakhavtomat.com">sakhavtomat.com</a>
+                <br>
+            </li>
+        </ul>
+        <div class="map__wrap">{% include "map.njk" %}</div>
+    </div>
+
+</main>

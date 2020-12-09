@@ -1,0 +1,35 @@
+.single-page {
+    display: block;
+    margin: auto;
+    padding: 0 1em;
+    max-width: 60em;
+}
+
+.single-page h2 {
+    text-align: center;
+    line-height: 3em;
+}
+
+.single-page p {
+    text-align: justify;
+    padding-bottom: 2em;
+}
+
+
+
+.single-page p img {
+    display: block;
+    margin: auto;
+    max-width: 400px;
+    min-width: 300px;
+    padding: .5em 0;
+}
+
+.single-page ul {
+    padding-bottom: 2em;
+    padding-left: 2em;
+}
+
+.single-page--image-inline p img {
+    display: inline-block;
+}

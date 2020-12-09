@@ -1,0 +1,153 @@
+---
+title: Работы
+layout: page.njk
+permalink: works/index.html
+tags: pages
+---
+<main class="main">
+    <h2 class="section__title">Выполненные работы</h2>
+    <div class="works">
+        <div class="works-content">
+            <section id="y2010">
+                <h3 ><a href="#y2010">2010</a></h3>
+                {%- for work in collections.y2010 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2011">
+                <h3 ><a href="#y2011">2011</a></h3>
+                {%- for work in collections.y2011 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2012">
+                <h3 ><a href="#y2012">2012</a></h3>
+                {%- for work in collections.y2012 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2013">
+                <h3 ><a href="#y2013">2013</a></h3>
+                {%- for work in collections.y2013 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2014">
+                <h3 ><a href="#y2014">2014</a></h3>
+                {%- for work in collections.y2014 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2015">
+                <h3 ><a href="#y2015">2015</a></h3>
+                {%- for work in collections.y2015 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+            <section id="y2016">
+                <h3 ><a href="#y2016">2016</a></h3>
+                {%- for work in collections.y2016 -%}
+                    <div>
+                        <h4>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </h4>
+                        <div class="works__images">{{work.templateContent | getImages | safe}}</div>
+                    </div>
+                {%- endfor -%}
+            </section>
+        </div>
+        <div class="works-menu">
+            <h2>Работы</h2>
+            <div class="works-menu__links">
+                <h3 ><a href="#y2010">2010</a></h3>
+                <ol>
+                    {%- for work in collections.y2011 -%}
+
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <h3 ><a href="#y2011">2011</a></h3>
+
+                <ol>
+                    {%- for work in collections.y2011 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <ol>
+                    <h3 ><a href="#y2012">2012</a></h3>
+                    {%- for work in collections.y2012 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <ol>
+                    <h3 ><a href="#y2013">2013</a></h3>
+                    {%- for work in collections.y2013 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <h3 ><a href="#y2014">2014</a></h3>
+                <ol>
+                    {%- for work in collections.y2014 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <h3 ><a href="#y2015">2015</a></h3>
+                <ol>
+                    {%- for work in collections.y2015 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+                <h3 ><a href="#y2016">2016</a></h3>
+                <ol>
+                    {%- for work in collections.y2016 -%}
+                        <li>
+                            <a href="{{work.url}}">{{work.templateContent | h1 | safe}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ol>
+            </div>
+        </div>
+    </div>
+</main>

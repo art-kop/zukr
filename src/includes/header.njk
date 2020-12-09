@@ -1,0 +1,9 @@
+<header class="header  {% if page.url == '/' %} header--top {% endif %}">
+    <a href="/" class="logo {% if page.url == '/' %} logo--top {% endif %}">
+        <img class="logo__img" src="/img/logo.svg" alt="logo">
+        <h1 class="logo__text">ДП Цукравтомат ИНЖ</h1>
+    </a>
+    <nav class="nav">
+        {% include "nav.njk" %}
+    </nav>
+</header>

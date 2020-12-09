@@ -1,0 +1,37 @@
+.logo {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.logo__img {
+    margin-right: .5em;
+    width: 2em;
+}
+
+.logo__text {
+    white-space: nowrap;
+    font-size: 1.2em;
+    display: inline-block;
+    font-weight: 300;
+}
+
+.logo--top{
+    transition: .3s;
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  .logo__text{
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+    .logo__img {
+        display: none;
+    }
+
+}

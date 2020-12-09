@@ -1,0 +1,26 @@
+.section__wrap{
+    margin-top: 90vh;
+}
+
+.section{
+    position: relative;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.section__title{
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    line-height: 3em;
+}
+
+.section__title::after, .section__title::before{
+    content: "";
+    width: 100%;
+    height: .2em;
+    margin: 0 1.1em;
+    background-color: #17141d;
+}

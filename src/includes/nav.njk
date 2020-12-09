@@ -1,0 +1,6 @@
+<ul class="nav__menu">
+    <li class="nav__item"><a class="nav__link" href="/">Главная</a></li>
+    {% for item in collections.pages %}
+        <li class="nav__item"><a class="nav__link" href="{{item.url}}">{{item.data.title}}</a></li>
+    {% endfor %}
+</ul>
