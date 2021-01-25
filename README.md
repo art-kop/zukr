@@ -1,2 +1,2 @@
 # zukrautomat
-Site of the subsidiary company "Tsukroavtomat - INZh".
+Not the site of the subsidiary company "Tsukroavtomat - INZH".
